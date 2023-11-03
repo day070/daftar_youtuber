@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: #4d4646;
+  overflow: hidden;
+}
+.hiasan {
+  display: flex;
+  position: relative;
+}
+.img-hero {
+  position: absolute;
+  width: 794px;
+  height: 791px;
+  background: url(image/hero-login.png);
+  top: 0;
+  margin-top: 190px;
+  margin-left: 20px;
+}
+.login {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  right: 140px;
+  height: 600px;
+  width: 600px;
+  /* background-color: red; */
+}
+.wel {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-family: Risque;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.btn-lg {
+  position: absolute;
+  width: 50%;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #d9d9d9;
+  bottom: 80px;
+  border: none;
+  z-index: 5;
+  transition: 0.3s ease;
+}
+.btn-lg:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.input-div {
+  position: absolute;
+  z-index: 2;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-div input {
+  width: 100%;
+  height: 30px;
+  padding: 20px;
+  margin: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
+  color: white;
+  letter-spacing: 2px;
+}
+.input-div input:focus {
+  background: #8f8888;
+  border-radius: 5px;
+}

@@ -1,0 +1,140 @@
+@font-face {
+  font-family: pina;
+  src: url(font/Pina.ttf);
+}
+@font-face {
+  font-family: myFont;
+  src: url(font/Evermore.ttf);
+}
+@font-face {
+  font-family: akira;
+  src: url(font/Akira.otf);
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+.con-nav {
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  height: 60px;
+  z-index: -1;
+  opacity: 50%;
+  top: 0;
+}
+nav {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  z-index: 999;
+  top: 0;
+}
+.ul-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  list-style-type: none;
+}
+.li-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 30px;
+  transition: 0.3s;
+}
+.li-nav:hover {
+  /* background-color: #2d2f30; */
+  /* transform: rotate(-10deg); */
+  border-bottom: 5px solid red;
+}
+.li-nav a {
+  color: white;
+  text-decoration: none;
+}
+.content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.slides {
+  width: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100vh;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+.slides .navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.slides .navigation .prev,
+.slides .navigation .next {
+  cursor: pointer;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  transition: 0.6s ease;
+}
+
+.slides .navigation .prev:hover,
+.slides .navigation .next:hover {
+  background: rgba(0, 0, 0, 1);
+}
+
+.banner-text {
+  position: absolute;
+  padding: 20px;
+  color: rgb(139, 61, 61);
+  margin-top: 90px;
+  top: 0;
+  font-size: 40px;
+  word-spacing: 10px;
+  filter: drop-shadow(0 6px 2px rgb(53, 49, 49));
+  letter-spacing: 10px;
+  font-family: akira;
+}
+.kanan {
+  display: flex;
+  height: 60px;
+  gap: 20px;
+  align-items: center;
+  margin-right: 40px;
+}
+.kanan a {
+  opacity: 50%;
+  transition: 0.3s;
+}
+.kanan a:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
