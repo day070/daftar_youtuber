@@ -6,7 +6,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background: #4d4646;
+  background: #ffffff;
   overflow: hidden;
 }
 .hiasan {
@@ -38,7 +38,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  color: #fff;
+  color: #333;
   text-align: center;
   font-family: Risque;
   font-size: 96px;
@@ -52,7 +52,8 @@ body {
   height: 50px;
   flex-shrink: 0;
   border-radius: 16px;
-  background: #d9d9d9;
+  background: #000;
+  color: #fff;
   bottom: 80px;
   border: none;
   z-index: 5;
@@ -82,7 +83,7 @@ body {
   border: none;
   outline: none;
   border-bottom: 2px solid black;
-  color: white;
+  color: #333;
   letter-spacing: 2px;
 }
 .input-div input:focus {

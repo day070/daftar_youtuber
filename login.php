@@ -1,6 +1,7 @@
 <?php
 session_start();
 require("koneksi.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,48 +25,49 @@ require("koneksi.php");
         <div class="img-hero">
             <img src="image/hero-login.png" alt="">
         </div>
-        <div class="login">
+        <form method="post">
+            <div class="login">
 
-            <h1 class="wel">Welcome</h1>
+                <h1 class="wel">Welcome</h1>
 
-            <div class="input-div">
-                <form method="post">
+                <div class="input-div">
 
                     <input type="text" placeholder="asda" name="username" autocomplete="off"><br>
                     <input type="password" placeholder="sasadadadada" name="password">
+                </div>
 
-                    <input type="submit" value="submit" name="kirim" class="btn-lg">
-                </form>
+                <button class="btn-lg" name="kirim">
+                    <h2>LOGIN</h2>
+                </button>
             </div>
-            <?php
-            if (isset($_POST['kirim'])) {
-                $username = htmlspecialchars($_POST['username']);
-                $password = htmlspecialchars($_POST['password']);
+        </form>
+        <?php
+        if (isset($_POST['kirim'])) {
+            $username = htmlspecialchars($_POST['username']);
+            $password = htmlspecialchars($_POST['password']);
 
-                $query = mysqli_query($con, "SELECT * FROM users WHERE username ='$username'");
-                $countdata = mysqli_num_rows($query);
-                $data = mysqli_fetch_array($query);
-                if ($countdata > 0) {
-                    if (password_verify($password, $data['password'])) {
-                        $_SESSION['username'] = $data['username'];
-                        $_SESSION['nama'] = $data['name_usr'];
-                        $_SESSION['login'] = true;
-                        header('location: index.php');
-                    } else {
-
-                        ?>
-                        <div class="alert alert-danger" role="alert">Password Salah!</div>
-                        <?php
-                    }
+            $query = mysqli_query($con, "SELECT * FROM users WHERE username ='$username'");
+            $countdata = mysqli_num_rows($query);
+            $data = mysqli_fetch_array($query);
+            if ($countdata > 0) {
+                if (password_verify($password, $data['password'])) {
+                    $_SESSION['username'] = $data['username'];
+                    $_SESSION['nama'] = $data['name_usr'];
+                    $_SESSION['login'] = true;
+                    header('location: index.php');
                 } else {
                     ?>
-                    <div class="alert alert-danger" role="alert">Data yang kamu masukan Salah!</div>
+                    <div class="alert alert-danger" role="alert">Password Salah!</div>
                     <?php
                 }
+            } else {
+                ?>
+                <div class="alert alert-danger" role="alert">Data yang kamu masukan Salah!</div>
+                <?php
             }
+        }
 
-            ?>
-        </div>
+        ?>
     </div>
 </body>
 
