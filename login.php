@@ -29,7 +29,9 @@ require("koneksi.php");
             <div class="login">
 
                 <h1 class="wel">Welcome</h1>
-
+                <div class="avatar">
+                    <img src="image/avatar.png">
+                </div>
                 <div class="input-div">
 
                     <input type="text" placeholder="asda" name="username" autocomplete="off"><br>
@@ -39,35 +41,38 @@ require("koneksi.php");
                 <button class="btn-lg" name="kirim">
                     <h2>LOGIN</h2>
                 </button>
+                <?php
+                if (isset($_POST['kirim'])) {
+                    $username = htmlspecialchars($_POST['username']);
+                    $password = htmlspecialchars($_POST['password']);
+
+                    $query = mysqli_query($con, "SELECT * FROM users WHERE username ='$username'");
+                    $countdata = mysqli_num_rows($query);
+                    $data = mysqli_fetch_array($query);
+                    if ($countdata > 0) {
+                        if (password_verify($password, $data['password'])) {
+                            $_SESSION['username'] = $data['username'];
+                            $_SESSION['nama'] = $data['name_usr'];
+                            $_SESSION['login'] = true;
+                            header('location: index.php');
+                        } else {
+                            ?>
+                            <div class="danger">Password Salah!</div>
+                            <?php
+                            header('location:login.php');
+                            ?>
+                            <?php
+                        }
+                    } else {
+                        ?>
+                        <div class="danger">Data yang kamu masukan Salah!</div>
+                        <?php
+                    }
+                }
+
+                ?>
             </div>
         </form>
-        <?php
-        if (isset($_POST['kirim'])) {
-            $username = htmlspecialchars($_POST['username']);
-            $password = htmlspecialchars($_POST['password']);
-
-            $query = mysqli_query($con, "SELECT * FROM users WHERE username ='$username'");
-            $countdata = mysqli_num_rows($query);
-            $data = mysqli_fetch_array($query);
-            if ($countdata > 0) {
-                if (password_verify($password, $data['password'])) {
-                    $_SESSION['username'] = $data['username'];
-                    $_SESSION['nama'] = $data['name_usr'];
-                    $_SESSION['login'] = true;
-                    header('location: index.php');
-                } else {
-                    ?>
-                    <div class="alert alert-danger" role="alert">Password Salah!</div>
-                    <?php
-                }
-            } else {
-                ?>
-                <div class="alert alert-danger" role="alert">Data yang kamu masukan Salah!</div>
-                <?php
-            }
-        }
-
-        ?>
     </div>
 </body>
 

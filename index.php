@@ -24,6 +24,7 @@ $result = mysqli_query($con, "SELECT * FROM profil ");
             <li class="li-nav"><a href="#">Beranda</a></li>
             <li class="li-nav"><a href="#">Daftar</a></li>
             <li class="li-nav"><a href="#">Support</a></li>
+            <li class="li-nav"><a href="logout.php">Logout</a></li>
         </ul>
         <div class="kanan">
             <a href=""><i class="fa-regular fa-user" style="color: white;"></i></a>

@@ -17,7 +17,7 @@ body {
   position: absolute;
   width: 794px;
   height: 791px;
-  background: url(image/hero-login.png);
+  background: url("image/hero-login.png");
   top: 0;
   margin-top: 190px;
   margin-left: 20px;
@@ -89,4 +89,20 @@ body {
 .input-div input:focus {
   background: #8f8888;
   border-radius: 5px;
+}
+
+.avatar {
+  position: absolute;
+  top: 150px;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.avatar img {
+  width: 50px;
+  height: 50px;
+}
+.danger {
+  position: absolute;
+  bottom: 190px;
 }
