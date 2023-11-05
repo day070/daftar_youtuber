@@ -33,9 +33,15 @@ require("koneksi.php");
                     <img src="image/avatar.png">
                 </div>
                 <div class="input-div">
+                    <div class="field">
+                        <input type="text" name="username" autocomplete="off" required="">
+                        <label>Nama</label>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="password" autocomplete="off" required="">
+                        <label>Password</label>
+                    </div>
 
-                    <input type="text" placeholder="asda" name="username" autocomplete="off"><br>
-                    <input type="password" placeholder="sasadadadada" name="password">
                 </div>
 
                 <button class="btn-lg" name="kirim">
@@ -58,14 +64,13 @@ require("koneksi.php");
                         } else {
                             ?>
                             <div class="danger">Password Salah!</div>
-                            <?php
-                            header('location:login.php');
-                            ?>
+                            <meta>
                             <?php
                         }
                     } else {
                         ?>
                         <div class="danger">Data yang kamu masukan Salah!</div>
+
                         <?php
                     }
                 }
