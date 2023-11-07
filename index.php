@@ -48,27 +48,73 @@ $result = mysqli_query($con, "SELECT * FROM profil ");
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
     </div>
+    <div class="container">
+        <div class="card-body">
+            <div class="card">
+                <img id="img1" src="image/" alt="" />
+                <img id="img2" src="" alt="" />
+                <div class="content">
+                    <h2 id="h2">Dr. Strange</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Perferendis quasi aliquid voluptatibus recusandae dolorum hic,
+                        nisi ducimus voluptatem quis cupiditate libero accusantium iusto
+                        tempore voluptatum eum quia ipsa, eius impedit rem neque
+                        asperiores officiis sapiente?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="card">
+                <img id="img1" src="Images/dr. strange.png" alt="" />
+                <img id="img2" src="Images/dr. strange 2.png" alt="" />
+                <div class="content">
+                    <h2 id="h2">Dr. Strange</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Perferendis quasi aliquid voluptatibus recusandae dolorum hic,
+                        nisi ducimus voluptatem quis cupiditate libero accusantium iusto
+                        tempore voluptatum eum quia ipsa, eius impedit rem neque
+                        asperiores officiis sapiente?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="card">
+                <img id="img1" src="Images/dr. strange.png" alt="" />
+                <img id="img2" src="Images/dr. strange 2.png" alt="" />
+                <div class="content">
+                    <h2 id="h2">Dr. Strange</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Perferendis quasi aliquid voluptatibus recusandae dolorum hic,
+                        nisi ducimus voluptatem quis cupiditate libero accusantium iusto
+                        tempore voluptatum eum quia ipsa, eius impedit rem neque
+                        asperiores officiis sapiente?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="card">
+                <img id="img1" src="Images/dr. strange.png" alt="" />
+                <img id="img2" src="Images/dr. strange 2.png" alt="" />
+                <div class="content">
+                    <h2 id="h2">Dr. Strange</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Perferendis quasi aliquid voluptatibus recusandae dolorum hic,
+                        nisi ducimus voluptatem quis cupiditate libero accusantium iusto
+                        tempore voluptatum eum quia ipsa, eius impedit rem neque
+                        asperiores officiis sapiente?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <table border="1" style="border-collapse: collapse;" width="100%">
-        <tr>
-            <th>Nama</th>
-            <th>Negara</th>
-            <th>Konten</th>
-            <th>Aksi</th>
-        </tr>
-        <?php
-        while ($row = mysqli_fetch_array($result)) {
-            echo "<tr>";
-            echo "<td>" . $row['Nama'] . "</td>";
-            echo "<td>" . $row['Negara'] . "</td>";
-            echo "<td>" . $row['J_konten'] . "</td>";
-            echo "<td>" . "<a href='edit.php?id=$row[id_youtuber]'>Edit/</a><a href='delete.php?id=$row[id_youtuber]'>Hapus</a>" . "</td>";
-            echo "</tr>";
-        }
-        ?>
-    </table>
-    <br>
-    <a href="tambah.php">Tambah Data</a>
     <script src="fontawesome/js/all.min.js"></script>
     <script src="script.js"></script>
 </body>

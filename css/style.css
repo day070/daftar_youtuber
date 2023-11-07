@@ -60,12 +60,6 @@ nav {
   color: white;
   text-decoration: none;
 }
-.content {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-}
 .slides {
   width: 100%;
   position: relative;
@@ -128,6 +122,114 @@ nav {
 .kanan a:hover {
   cursor: pointer;
   opacity: 100%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.card-body {
+  align-items: center;
+  margin-top: 150px;
+  justify-content: center;
+  display: flex;
+}
+.card {
+  width: 600px;
+  height: 300px;
+  position: relative;
+  margin: 20px;
+  padding: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(135deg, #221212, #2b374b);
+  border-radius: 25px;
+  transition: 1s;
+}
+#img1 {
+  position: absolute;
+  width: auto;
+  height: 400px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 1s;
+}
+#img2 {
+  position: absolute;
+  width: auto;
+  height: 500px;
+  bottom: 0;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: 1s;
+}
+.card:hover #img1 {
+  opacity: 0;
+  height: 600px;
+  left: 80%;
+  transition: 1s;
+}
+.card:hover #img2 {
+  opacity: 100%;
+  height: 350px;
+  left: 80%;
+  transition: 1.5s;
+}
+.content {
+  color: #fff;
+  width: 400px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.content h2 {
+  font-size: 3em;
+}
+.card:hover .content {
+  opacity: 100%;
+}
+
+@media (max-width: 681px) {
+  .card {
+    position: relative;
+    max-width: 600px;
+    display: block;
+  }
+  .card:hover {
+    height: 620px;
+  }
+  .card:hover #img1 {
+    opacity: 0;
+    height: 400px;
+    left: 50%;
+    transition: 1s;
+  }
+  .card:hover #img2 {
+    opacity: 100%;
+    height: 400px;
+    left: 50%;
+    transition: 1s;
+  }
+  .card:hover .content {
+    top: 10px;
+    width: 100%;
+  }
+}
+@media (max-width: 431px) {
+  .card:hover {
+    height: 660px;
+  }
+}
+@media (max-width: 352px) {
+  .card:hover {
+    height: 800px;
+  }
+  button:nth-child(6) {
+    margin-bottom: 60px;
+  }
 }
 
 @keyframes fade {
