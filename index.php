@@ -48,71 +48,33 @@ $result = mysqli_query($con, "SELECT * FROM profil ");
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
     </div>
+
+
     <div class="container">
-        <div class="card-body">
-            <div class="card">
-                <img id="img1" src="image/" alt="" />
-                <img id="img2" src="" alt="" />
-                <div class="content">
-                    <h2 id="h2">Dr. Strange</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Perferendis quasi aliquid voluptatibus recusandae dolorum hic,
-                        nisi ducimus voluptatem quis cupiditate libero accusantium iusto
-                        tempore voluptatum eum quia ipsa, eius impedit rem neque
-                        asperiores officiis sapiente?
-                    </p>
+        <?php
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <div class="card-body">
+                <div class="card">
+                    <img id="img1" src="image/" alt="" />
+                    <img id="img2" src="" alt="" />
+                    <div class="content">
+                        <h2 id="h2">
+                            <?php echo $row['Nama'] ?>
+                        </h2>
+                        <p>
+                            <?php echo $row['Deskripsi'] ?>
+                        <h4>
+                            <?php echo $row['kasus'] ?>
+                        </h4>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card-body">
-            <div class="card">
-                <img id="img1" src="Images/dr. strange.png" alt="" />
-                <img id="img2" src="Images/dr. strange 2.png" alt="" />
-                <div class="content">
-                    <h2 id="h2">Dr. Strange</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Perferendis quasi aliquid voluptatibus recusandae dolorum hic,
-                        nisi ducimus voluptatem quis cupiditate libero accusantium iusto
-                        tempore voluptatum eum quia ipsa, eius impedit rem neque
-                        asperiores officiis sapiente?
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="card">
-                <img id="img1" src="Images/dr. strange.png" alt="" />
-                <img id="img2" src="Images/dr. strange 2.png" alt="" />
-                <div class="content">
-                    <h2 id="h2">Dr. Strange</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Perferendis quasi aliquid voluptatibus recusandae dolorum hic,
-                        nisi ducimus voluptatem quis cupiditate libero accusantium iusto
-                        tempore voluptatum eum quia ipsa, eius impedit rem neque
-                        asperiores officiis sapiente?
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="card">
-                <img id="img1" src="Images/dr. strange.png" alt="" />
-                <img id="img2" src="Images/dr. strange 2.png" alt="" />
-                <div class="content">
-                    <h2 id="h2">Dr. Strange</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Perferendis quasi aliquid voluptatibus recusandae dolorum hic,
-                        nisi ducimus voluptatem quis cupiditate libero accusantium iusto
-                        tempore voluptatum eum quia ipsa, eius impedit rem neque
-                        asperiores officiis sapiente?
-                    </p>
-                </div>
-            </div>
-        </div>
+            <?php
+        }
+        ?>
+
     </div>
 
     <script src="fontawesome/js/all.min.js"></script>
