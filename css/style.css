@@ -23,7 +23,6 @@
   width: 100%;
   height: 60px;
   z-index: -1;
-  opacity: 50%;
   top: 0;
 }
 nav {
@@ -125,18 +124,19 @@ nav {
 }
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   flex-wrap: wrap;
 }
 .card-body {
   align-items: center;
-  margin-top: 150px;
+  margin-bottom: 100px;
   justify-content: center;
   display: flex;
+  width: 400px;
 }
 .card {
-  width: 600px;
+  width: 100%;
   height: 300px;
   position: relative;
   margin: 20px;
