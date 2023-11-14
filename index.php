@@ -62,11 +62,11 @@ $result = mysqli_query($con, "SELECT * FROM profil ");
                         <h2 id="h2">
                             <?php echo $row['Nama'] ?>
                         </h2>
-                        <p>
-                            <?php echo $row['Deskripsi'] ?>
                         <h4>
                             <?php echo $row['kasus'] ?>
                         </h4>
+                        <p>
+                            <?php echo $row['Deskripsi'] ?>
                         </p>
                     </div>
                 </div>
