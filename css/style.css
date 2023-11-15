@@ -17,6 +17,9 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
+body {
+  background-color: #ece6e6;
+}
 .con-nav {
   position: fixed;
   background-color: black;
@@ -59,14 +62,20 @@ nav {
   color: white;
   text-decoration: none;
 }
-.slides {
-  width: 100%;
-  position: relative;
-}
-
-.slide img {
+.banner img {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+}
+.slides {
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+}
+.slide img {
+  width: 100%;
+  height: 60vh;
   animation-name: fade;
   animation-duration: 1s;
 }
@@ -117,6 +126,9 @@ nav {
 .kanan a {
   opacity: 50%;
   transition: 0.3s;
+  display: flex;
+  color: white;
+  text-decoration: none;
 }
 .kanan a:hover {
   cursor: pointer;
@@ -137,7 +149,7 @@ nav {
 }
 .card {
   width: 100%;
-  height: 300px;
+  height: 400px;
   position: relative;
   margin: 20px;
   padding: 30px;
@@ -169,9 +181,9 @@ nav {
 }
 .card:hover #img1 {
   opacity: 0;
-  height: 600px;
-  left: 80%;
   transition: 1s;
+  height: 600px;
+  left: 100%;
 }
 .card:hover #img2 {
   opacity: 100%;
@@ -188,10 +200,28 @@ nav {
 .content h2 {
   font-size: 3em;
 }
+.content h4 {
+  font-size: 1.3em;
+  color: yellowgreen;
+}
 .card:hover .content {
   opacity: 100%;
 }
 
+.card-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+.btn-see {
+  background-color: green;
+  border: none;
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
 @media (max-width: 681px) {
   .card {
     position: relative;
