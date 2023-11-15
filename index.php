@@ -1,5 +1,4 @@
 <?php
-require("session.php");
 require("koneksi.php");
 $result = mysqli_query($con, "SELECT * FROM profil ");
 ?>
@@ -24,14 +23,17 @@ $result = mysqli_query($con, "SELECT * FROM profil ");
             <li class="li-nav"><a href="#">Beranda</a></li>
             <li class="li-nav"><a href="#">Daftar</a></li>
             <li class="li-nav"><a href="#">Support</a></li>
-            <li class="li-nav"><a href="logout.php">Logout</a></li>
         </ul>
         <div class="kanan">
-            <a href=""><i class="fa-regular fa-user" style="color: white;"></i></a>
+            <a href="login.php">Admin<i class="fa-regular fa-user" style="color: white;"></i></a>
             <a href=""><i class="fa-solid fa-earth-americas" style="color: white;"></i></a>
         </div>
     </nav>
+    <div class="banner">
+        <img src="image/yt-bg.jpg" alt="">
+    </div>
     <div class="slides">
+        <h2>Trending Now</h2>
         <div class="slide">
             <img src="image/1.jpg" alt="">
         </div>
@@ -56,7 +58,7 @@ $result = mysqli_query($con, "SELECT * FROM profil ");
             ?>
             <div class="card-body">
                 <div class="card">
-                    <img id="img1" src="image/" alt="" />
+                    <img id="img1" src="image/<?php echo $row['foto'] ?>" alt="" />
                     <img id="img2" src="" alt="" />
                     <div class="content">
                         <h2 id="h2">
@@ -65,9 +67,13 @@ $result = mysqli_query($con, "SELECT * FROM profil ");
                         <h4>
                             <?php echo $row['kasus'] ?>
                         </h4>
-                        <p>
+
+                        <p class="card-text">
                             <?php echo $row['Deskripsi'] ?>
                         </p>
+                        <?php
+                        echo "<button class='btn-see'><a href='info_youtuber.php?id=$row[id_youtuber]'>Seemore</a></button>"
+                            ?>
                     </div>
                 </div>
             </div>
