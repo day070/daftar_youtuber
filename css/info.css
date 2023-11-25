@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ece6e6;
+}
+.containerr {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board {
+  width: 700px;
+  height: 400px;
+  border-radius: 90px 0 90px 0;
+  background-color: #343434;
+  margin-left: -300px;
+}
+.judul {
+  margin: 0;
+  padding: 0;
+}
+.nama {
+  margin-top: 30px;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 50px;
+  color: #9f9898;
+}
+.kasus {
+  color: #9f9898;
+  margin-left: 20px;
+}
+.deskripsi {
+  color: #9f9898;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: 600px;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+.con-sub {
+  width: 120px;
+  height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
+  margin-top: 30px;
+  margin-left: 30px;
+  background: #e13535;
+}
+.flag {
+  width: 150px;
+  position: absolute;
+  right: 0;
+  margin-right: 490px;
+  top: 0;
+  margin-top: 160px;
+}
+.gambar {
+  width: 400px;
+  border-radius: 20px;
+  z-index: -1;
+  height: 400px;
+  position: absolute;
+  margin-right: 90px;
+  right: 0;
+}
