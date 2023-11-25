@@ -28,7 +28,7 @@ require("koneksi.php");
         <form method="post">
             <div class="login">
 
-                <h1 class="wel">Welcome</h1>
+                <h1 style="font-size: 100px;">Welcome</h1>
                 <div class="avatar">
                     <img src="image/avatar.png">
                 </div>
@@ -58,9 +58,9 @@ require("koneksi.php");
                     if ($countdata > 0) {
                         if (password_verify($password, $data['password'])) {
                             $_SESSION['username'] = $data['username'];
-                            $_SESSION['nama'] = $data['name_usr'];
+                            $_SESSION['nama'] = $data['nama'];
                             $_SESSION['login'] = true;
-                            header('location: index.php');
+                            header('location: admin');
                         } else {
                             ?>
                             <div class="danger">Password Salah!</div>
