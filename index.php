@@ -1,6 +1,6 @@
 <?php
 require("koneksi.php");
-$result = mysqli_query($con, "SELECT * FROM profil ");
+$result = mysqli_query($con, "SELECT * FROM profil LIMIT 3");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,40 +10,40 @@ $result = mysqli_query($con, "SELECT * FROM profil ");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
 </head>
 
 <body>
     <nav>
         <div class="con-nav"></div>
         <div class="logo">
-            <img src="image/1.jpg" width="40px" style="border-radius:50%;">
+            <img src="image/hero-login.png" width="40px" style="border-radius:50%;margin-top:10px;">
         </div>
         <ul class="ul-nav">
             <li class="li-nav"><a href="#">Beranda</a></li>
-            <li class="li-nav"><a href="#">Daftar</a></li>
+            <li class="li-nav"><a href="daftar.php">Daftar</a></li>
             <li class="li-nav"><a href="#">Support</a></li>
         </ul>
         <div class="kanan">
-            <a href="login.php">Admin<i class="fa-regular fa-user" style="color: white;"></i></a>
+            <a href="admin/index.php">Admin</a>
             <a href=""><i class="fa-solid fa-earth-americas" style="color: white;"></i></a>
         </div>
     </nav>
+
     <div class="banner">
         <img src="image/yt-bg.jpg" alt="">
     </div>
     <div class="slides">
         <h2>Trending Now</h2>
-        <div class="slide">
-            <img src="image/1.jpg" alt="">
-        </div>
+
 
         <div class="slide">
-            <img src="image/2.jpg" alt="">
+            <img src="image/bn-2.png" alt="">
         </div>
-
         <div class="slide">
-            <img src="image/3.jpg" alt="">
+            <img src="image/desktop - 2.png" alt="">
+        </div>
+        <div class="slide">
+            <img src="image/bn-3.png" alt="">
         </div>
         <div class="navigation">
             <a class="prev" onclick="minesSlides(-1)">&#10094;</a>
@@ -52,15 +52,15 @@ $result = mysqli_query($con, "SELECT * FROM profil ");
     </div>
 
 
-    <div class="container">
+    <div class="kontainer">
         <?php
         while ($row = mysqli_fetch_assoc($result)) {
             ?>
-            <div class="card-body">
-                <div class="card">
+            <div class="kartu-body" id="daftar">
+                <div class="kartu">
                     <img id="img1" src="image/<?php echo $row['foto'] ?>" alt="" />
                     <img id="img2" src="" alt="" />
-                    <div class="content">
+                    <div class="kontent">
                         <h2 id="h2">
                             <?php echo $row['Nama'] ?>
                         </h2>
@@ -68,7 +68,7 @@ $result = mysqli_query($con, "SELECT * FROM profil ");
                             <?php echo $row['kasus'] ?>
                         </h4>
 
-                        <p class="card-text">
+                        <p class="kartu-text">
                             <?php echo $row['Deskripsi'] ?>
                         </p>
                         <?php
